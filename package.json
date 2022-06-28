@@ -1,0 +1,28 @@
+{
+  "name": "mymeanapp",
+  "version": "1.0.0",
+  "description": "usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]            [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]            [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]            [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]            [--super-prefix=<path>] [--config-env=<name>=<envvar>]            <command> [<args>]",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShivamSrivastava20/MyMeanApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShivamSrivastava20/MyMeanApp/issues"
+  },
+  "homepage": "https://github.com/ShivamSrivastava20/MyMeanApp#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.0",
+    "nodemon": "^2.0.18"
+  }
+}

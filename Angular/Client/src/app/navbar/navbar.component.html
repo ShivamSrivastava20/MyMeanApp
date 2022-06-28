@@ -1,0 +1,30 @@
+<nav class="shadow navbar navbar-expand-lg bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand " href="#">TORQUE</a>
+      <div class="navbar-nav ">
+        
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/homepage">HOME PAGE</a>
+          </li></div>
+
+
+
+
+          <ul class="navbar-nav navbar-right">
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item">
+            <a class="nav-link active " routerLink="/dashboard">DASHBOARD</a>
+          </li>
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item">
+            <a class="nav-link active" routerLink="/blog-app">BLOG APP</a>
+          </li>
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item">
+            <a class="nav-link active" routerLink="register"><span class="glyphicon glyphicon-user"></span>REGISTER</a>
+          </li>
+
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item">
+            <a class="nav-link active" routerLink="login"><span class="glyphicon glyphicon-log-in"></span>LOGIN</a>
+          </li>
+          </ul>
+      
+    </div>
+  </nav>
