@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 
 //building our first routes
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path : 'register',
     component:RegisterComponent
+  },
+  {
+    path : 'login',
+    component:LoginComponent
   }
 ]
 

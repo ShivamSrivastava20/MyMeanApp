@@ -158,7 +158,7 @@ userSchema.pre('save' , function(next)
    });
 });
 // Decrypting password to be used in login feature
-userSchema.methods.comparePassword = (password) =>
+userSchema.methods.comparePassword = function(password)
 {
     return bcrypt.compareSync(password,this.password);
 };

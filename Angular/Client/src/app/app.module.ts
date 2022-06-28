@@ -9,13 +9,15 @@ import { HomepageComponent } from './homepage/homepage.component';
 // Http and services added 
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './service/auth.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RegisterComponent,
-    HomepageComponent
+    HomepageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

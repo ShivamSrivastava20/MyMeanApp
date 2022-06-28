@@ -1,3 +1,4 @@
+import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormControl,FormGroup ,Validator, Validators } from '@angular/forms';
 // authservice added
@@ -9,7 +10,10 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  messageClass: any;
+  message: any;
+  processing=false;
+  
 
 
   constructor(
@@ -24,15 +28,73 @@ export class RegisterComponent implements OnInit {
 
   form=new FormGroup({
     // Adding validators
-  email:new FormControl("", Validators.required),
-  username:new FormControl("" , Validators.required),
-  password:new FormControl("" , Validators.required),
+  email:new FormControl("", Validators.compose
+  ([
+    Validators.required,
+    Validators.minLength(5),
+    Validators.maxLength(30),
+    
+    ])),
+  username:new FormControl("" , Validators.compose
+  ([
+    Validators.required,
+    Validators.minLength(2),
+    Validators.maxLength(20)
+    ])),
+  password:new FormControl("" , Validators.compose
+  ([
+    Validators.required,
+    Validators.minLength(6),
+    Validators.maxLength(30)
+    ])),
   confirm:new FormControl("" , Validators.required)
 });
+
+// functions
+/*
+validateEmail()
+{
+  const regExp=new RegExp( /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  if( regExp.test())
+  {
+    return null;
+  }
+  else{
+    return {'validateEmail' : true};
+  }
+}*/
+
+matchingPasswords(password: string | number,confirm: string | number)
+{
+  return (group: FormGroup)=>
+  {
+    if(group.controls[password].value===group.controls[confirm].value)
+    {
+      return null;
+    }
+    else{
+      return {"Matching Passwords" :true};
+    }
+  }
+}
+disabledForm()
+{
+  username : this.form.controls.username.disable();
+  password : this.form.controls.password.disable();
+}
+enabledForm()
+{
+  username : this.form.controls.username.enable();
+  password : this.form.controls.password.enable();
+}
+
 
 // After Ngsubmit control will come to this function from .html file and pls add button inside form tag 
 registered()
 {
+
+  this.processing=true;
+  this.disabledForm();
   // This will print entire form data 
  //console.log(this.form)
 
