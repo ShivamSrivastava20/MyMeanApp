@@ -108,14 +108,24 @@ registered()
   confirm : this.form.controls.confirm.value
  }
 
- //console.log("this is angular :",user);
+ console.log("this is angular :",user);
  //data-> data which is going to be returned from routes
  this.authservice.registerUser(user).subscribe(data =>
   {
-    //we will get return message from authentication.js
+   if(!data.success)
+    {
+      this.messageClass='alert alert-danger';
+      this.message=data.message;
+    }
+    else{
+      this.messageClass='alert alert-success';
+      this.message=data.message;
+    }
+    //we will get return message from services
     console.log(data);
   });
-  //console.log("data:" , dita);
+ 
+ 
 }
 
 // sending this to HTML 

@@ -16,7 +16,7 @@ export class AuthService {
 // Function to register user account
   registerUser(user:any)
 {
-  //console.log("This is :" ,user);
+  //console.log("This is :" ,user);    authentication api and register routes
 return this.http.post<any>('http://localhost:8080/authentication/register',user).pipe(
   map((data: any) => {
     return data;

@@ -13,6 +13,10 @@ const routes: Routes = [
     component:HomepageComponent
   },
   {
+    path : '',
+    component:HomepageComponent
+  },
+  {
     path : 'register',
     component:RegisterComponent
   },
@@ -23,7 +27,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)],//passing all routes 
   exports: [RouterModule],
  
 })

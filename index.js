@@ -87,5 +87,5 @@ app.get('/' , (req,res)=>
 // step 1:  Connecting to Port 8080 (Express)
 app.listen(8080 , ()=>
 {
-console.log("Localhost : 8080 is running");
+console.log("Localhost : 8080 is run");
 })

@@ -1,7 +1,12 @@
 <html>
 
 <body>
+<div class="row show-hide-message">
+    <div [ngClass] = "messageClass" >
+        {{ message }}
+    </div>
 
+</div>
     <div style="background-image: url('./assets/images/backgroundimage.jpg'); height: 100vh">
         <form [formGroup]="form" (ngSubmit)="registered()" class="mt-5">
             <h1 class="mb-4 text-center">Registration Form </h1>

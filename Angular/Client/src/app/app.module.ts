@@ -10,6 +10,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './service/auth.service';
 import { LoginComponent } from './login/login.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     RegisterComponent,
     HomepageComponent,
-    LoginComponent
+    LoginComponent,
+    AddToCartComponent
   ],
   imports: [
     BrowserModule,

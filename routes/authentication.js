@@ -86,6 +86,7 @@ module.exports = (Router) => {
     })
 
     // Login route
+    
     Router.post('/login', (req, res) => {
         if (!req.body.username) {
             res.json({ success: false, message: "Please provide a username" });
